@@ -1,4 +1,3 @@
 functions-framework
-io
-json
+
 google-cloud-storage>=2.0.0

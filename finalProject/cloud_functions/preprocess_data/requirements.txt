@@ -1,6 +1,4 @@
 functions-framework
 networkx
 pandas
-io
-json
 google-cloud-storage>=2.0.0
