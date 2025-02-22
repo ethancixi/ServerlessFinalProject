@@ -1,0 +1,11 @@
+gcloud services enable compute.googleapis.com \
+                                               cloudfunctions.googleapis.com \
+                                               workflows.googleapis.com \
+                                               cloudbuild.googleapis.com \
+                                               storage.googleapis.com \
+                                               pubsub.googleapis.com
+
+
+terraform init
+
+terraform apply -auto-approve

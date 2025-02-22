@@ -1,0 +1,10 @@
+main:
+  steps:
+    - fetch_data:
+        call: http.get
+        args:
+          url: "https://europe-west3-YOUR_PROJECT_ID.cloudfunctions.net/fetch_data"
+    - preprocess_data:
+        call: http.get
+        args:
+          url: "https://europe-west3-YOUR_PROJECT_ID.cloudfunctions.net/preprocess_data"
