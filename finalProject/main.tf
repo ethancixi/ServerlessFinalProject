@@ -40,9 +40,9 @@ resource "google_storage_bucket" "function_bucket" {
 
 # Cloud Function source code object
 resource "google_storage_bucket_object" "fetch_data_code" {
-  name   = "fetch-data.zip"
+  name   = "cloud_functions/fetch_data/fetch-data.zip"
   bucket = google_storage_bucket.function_bucket.name
-  source = "${path.module}/function-code.zip"
+  source = "cloud_functions/fetch_data/fetch-data.zip"
 }
 
 # Cloud Function resource
@@ -64,4 +64,24 @@ resource "google_workflows_workflow" "research_workflow" {
   name            = "research-analysis-workflow"
   region          = "europe-west3"
   source_contents = file("${path.module}/workflow.yaml")
+}
+
+# Service account for the Cloud Function
+resource "google_service_account" "function_service_account" {
+  account_id   = "function-service-account"
+  display_name = "Cloud Function Service Account"
+}
+
+# Grant the service account permission to read from Cloud Storage
+resource "google_storage_bucket_iam_member" "function_storage_permission" {
+  bucket = google_storage_bucket.raw_data.name
+  role   = "roles/storage.objectViewer"
+  member = "serviceAccount:${google_service_account.function_service_account.email}"
+}
+
+# Grant the service account permission to invoke Cloud Functions
+resource "google_project_iam_member" "function_invoker" {
+  project = "serverlessfinalproject"
+  role    = "roles/cloudfunctions.invoker"
+  member  = "serviceAccount:${google_service_account.function_service_account.email}"
 }
