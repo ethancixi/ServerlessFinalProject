@@ -136,8 +136,8 @@ if __name__ == "__main__":
     INPUT_BUCKET_NAME = "serverlessfinalproject-raw-data-bucket"
     INPUT_BLOB_NAME = "openalex_works.json"
     OUTPUT_BUCKET_NAME = "serverlessfinalproject-citation-graph-bucket"
-    OUTPUT_CSV_BLOB_NAME = "preprocessed_data_csv.csv"
-    OUTPUT_GRAPH_BLOB_NAME = "preprocessed_data_graph.json"
+    OUTPUT_CSV_BLOB_NAME = "csv/preprocessed_data_csv.csv"
+    OUTPUT_GRAPH_BLOB_NAME = "graph/preprocessed_data_graph.json"
 
     try:
         # Fetch data
