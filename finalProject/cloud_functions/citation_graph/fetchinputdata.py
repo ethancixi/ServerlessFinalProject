@@ -20,7 +20,8 @@ transformed_data = [
         "RelatedWork": item.get("related_works", []),
         "CountsByYear": item.get("counts_by_year", []),
         "RelatedPapers": [],
-        "DetailedTopics": []
+        "DetailedTopics": [],
+        "PublicationDate": item.get("publication_date", "0001-01-01"),
     }
     for item in results
 ]
@@ -98,7 +99,8 @@ for paper in transformed_data:
             relatedPaper = {
                 "ID": publication_details["id"],
                 "Title": publication_details["title"],
-                "DetailedTopics": detailed_topics
+                "DetailedTopics": detailed_topics,
+                "PublicationDate": publication_details["publication_date"]
             }
             paper["RelatedPapers"].append(relatedPaper)
 
@@ -110,7 +112,7 @@ citation_graph = nx.DiGraph()
 
 # Add nodes and edges to the graph
 for paper in transformed_data:
-    citation_graph.add_node(paper["ID"], title=paper["Title"], topics=paper["DetailedTopics"])
+    citation_graph.add_node(paper["ID"], title=paper["Title"], topics=paper["DetailedTopics"], pubdate=paper["PublicationDate"])
 
     # Add edges (citing relationships) and ensure unique entries in the related papers
     unique_related_papers = {related_paper["ID"]: related_paper for related_paper in paper["RelatedPapers"]}.values()
@@ -120,7 +122,7 @@ for paper in transformed_data:
         cited_paper_id = related_paper["ID"].split('/')[-1]  # Extract just the ID part
 
         if cited_paper_id not in citation_graph:
-            citation_graph.add_node(cited_paper_id, title=related_paper["Title"], topics=related_paper["DetailedTopics"])
+            citation_graph.add_node(cited_paper_id, title=related_paper["Title"], topics=related_paper["DetailedTopics"], pubdate=related_paper["PublicationDate"])
 
         citation_graph.add_edge(paper["ID"], cited_paper_id)
 
