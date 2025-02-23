@@ -19,7 +19,8 @@ transformed_data = [
         "Concepts": item.get("concepts", []),
         "RelatedWork": item.get("related_works", []),
         "CountsByYear": item.get("counts_by_year", []),
-        "RelatedPapers": []
+        "RelatedPapers": [],
+        "DetailedTopics": []
     }
     for item in results
 ]
@@ -46,6 +47,25 @@ def fetch_publication_details(pub_id):
 
 # Step 5: Fetch titles for all publications and update the transformed_data
 for paper in transformed_data:
+    for topic in paper.get("Topics", []):
+        topic_info = {
+            "id": topic["id"],
+            "display_name": topic["display_name"],
+            "subfield": {
+                "id": topic["subfield"]["id"] if "subfield" in topic else None,
+                "display_name": topic["subfield"]["display_name"] if "subfield" in topic else None
+            },
+            "field": {
+                "id": topic["field"]["id"] if "field" in topic else None,
+                "display_name": topic["field"]["display_name"] if "field" in topic else None
+            },
+            "domain": {
+                "id": topic["domain"]["id"] if "domain" in topic else None,
+                "display_name": topic["domain"]["display_name"] if "domain" in topic else None
+            }
+        }
+        paper["DetailedTopics"].append(topic_info)
+
     for related_paper in paper["RelatedWork"]:
         # Extract the related publication ID
         related_pub_id = related_paper.split('/')[-1]
@@ -53,11 +73,32 @@ for paper in transformed_data:
         # Fetch publication details for each related work
         publication_details = fetch_publication_details(related_pub_id)
 
+        detailed_topics = []
+        for topic in publication_details.get("Topics", []):
+            topic_info = {
+                "id": topic["id"],
+                "display_name": topic["display_name"],
+                "subfield": {
+                    "id": topic["subfield"]["id"] if "subfield" in topic else None,
+                    "display_name": topic["subfield"]["display_name"] if "subfield" in topic else None
+                },
+                "field": {
+                    "id": topic["field"]["id"] if "field" in topic else None,
+                    "display_name": topic["field"]["display_name"] if "field" in topic else None
+                },
+                "domain": {
+                    "id": topic["domain"]["id"] if "domain" in topic else None,
+                    "display_name": topic["domain"]["display_name"] if "domain" in topic else None
+                }
+            }
+            detailed_topics.append(topic_info)
+
         # If data is successfully fetched, add it to the related papers
         if publication_details:
             relatedPaper = {
                 "ID": publication_details["id"],
-                "Title": publication_details["title"]
+                "Title": publication_details["title"],
+                "DetailedTopics": detailed_topics
             }
             paper["RelatedPapers"].append(relatedPaper)
 
@@ -69,7 +110,7 @@ citation_graph = nx.DiGraph()
 
 # Add nodes and edges to the graph
 for paper in transformed_data:
-    citation_graph.add_node(paper["ID"], title=paper["Title"])
+    citation_graph.add_node(paper["ID"], title=paper["Title"], topics=paper["DetailedTopics"])
 
     # Add edges (citing relationships) and ensure unique entries in the related papers
     unique_related_papers = {related_paper["ID"]: related_paper for related_paper in paper["RelatedPapers"]}.values()
@@ -79,7 +120,7 @@ for paper in transformed_data:
         cited_paper_id = related_paper["ID"].split('/')[-1]  # Extract just the ID part
 
         if cited_paper_id not in citation_graph:
-            citation_graph.add_node(cited_paper_id, title=related_paper["Title"])
+            citation_graph.add_node(cited_paper_id, title=related_paper["Title"], topics=related_paper["DetailedTopics"])
 
         citation_graph.add_edge(paper["ID"], cited_paper_id)
 
