@@ -90,13 +90,15 @@ max_depth = 100  # Adjust as needed
 # Run BFS to find emerging topics with recency weighting
 topic_counts, subfield_counts, field_counts, domain_counts = bfs_emerging_topics(citation_graph, max_depth)
 
-# Step 6: Print emerging topics, grouped by category
-def print_sorted_counts(title, counter):
-    print(f"\n{title}:")
-    for item, count in counter.most_common():
-        print(f"{item}: {count:.2f}")  # Print with two decimal places
+# Step 6: Save results as JSON
+def save_to_json(filename, data):
+    """Save dictionary data to a JSON file."""
+    with open(filename, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=4, ensure_ascii=False)
 
-print_sorted_counts("Topics", topic_counts)
-print_sorted_counts("Subfields", subfield_counts)
-print_sorted_counts("Fields", field_counts)
-print_sorted_counts("Domains", domain_counts)
+save_to_json("topics.json", dict(topic_counts))
+save_to_json("subfields.json", dict(subfield_counts))
+save_to_json("fields.json", dict(field_counts))
+save_to_json("domains.json", dict(domain_counts))
+
+print("Saved results to topics.json, subfields.json, fields.json, and domains.json.")
