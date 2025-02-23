@@ -1,0 +1,312 @@
+{
+    "id": "https://openalex.org/W4235929402",
+    "doi": "https://doi.org/10.4028/www.scientific.net/amm",
+    "title": "Applied Mechanics and Materials",
+    "display_name": "Applied Mechanics and Materials",
+    "publication_year": 2025,
+    "publication_date": "2025-02-10",
+    "ids": {
+        "openalex": "https://openalex.org/W4235929402",
+        "doi": "https://doi.org/10.4028/www.scientific.net/amm"
+    },
+    "language": "en",
+    "primary_location": {
+        "is_oa": false,
+        "landing_page_url": "https://doi.org/10.4028/www.scientific.net/amm",
+        "pdf_url": null,
+        "source": {
+            "id": "https://openalex.org/S128754310",
+            "display_name": "Applied Mechanics and Materials",
+            "issn_l": "1660-9336",
+            "issn": [
+                "1660-9336",
+                "1662-7482",
+                "2297-8941"
+            ],
+            "is_oa": false,
+            "is_in_doaj": false,
+            "is_indexed_in_scopus": false,
+            "is_core": true,
+            "host_organization": "https://openalex.org/P4310317839",
+            "host_organization_name": "Trans Tech Publications",
+            "host_organization_lineage": [
+                "https://openalex.org/P4310317839"
+            ],
+            "host_organization_lineage_names": [
+                "Trans Tech Publications"
+            ],
+            "type": "journal"
+        },
+        "license": null,
+        "license_id": null,
+        "version": null,
+        "is_accepted": false,
+        "is_published": false
+    },
+    "type": "paratext",
+    "type_crossref": "journal",
+    "indexed_in": [
+        "crossref"
+    ],
+    "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null,
+        "any_repository_has_fulltext": false
+    },
+    "authorships": [],
+    "institution_assertions": [],
+    "countries_distinct_count": 0,
+    "institutions_distinct_count": 0,
+    "corresponding_author_ids": [],
+    "corresponding_institution_ids": [],
+    "apc_list": null,
+    "apc_paid": null,
+    "fwci": null,
+    "has_fulltext": false,
+    "cited_by_count": 2466,
+    "citation_normalized_percentile": {
+        "value": 0.961538,
+        "is_in_top_1_percent": false,
+        "is_in_top_10_percent": true
+    },
+    "cited_by_percentile_year": {
+        "min": 99,
+        "max": 100
+    },
+    "biblio": {
+        "volume": null,
+        "issue": null,
+        "first_page": null,
+        "last_page": null
+    },
+    "is_retracted": false,
+    "is_paratext": true,
+    "primary_topic": {
+        "id": "https://openalex.org/T13129",
+        "display_name": "Material Properties and Applications",
+        "score": 0.0695,
+        "subfield": {
+            "id": "https://openalex.org/subfields/2500",
+            "display_name": "General Materials Science"
+        },
+        "field": {
+            "id": "https://openalex.org/fields/25",
+            "display_name": "Materials Science"
+        },
+        "domain": {
+            "id": "https://openalex.org/domains/3",
+            "display_name": "Physical Sciences"
+        }
+    },
+    "topics": [
+        {
+            "id": "https://openalex.org/T13129",
+            "display_name": "Material Properties and Applications",
+            "score": 0.0695,
+            "subfield": {
+                "id": "https://openalex.org/subfields/2500",
+                "display_name": "General Materials Science"
+            },
+            "field": {
+                "id": "https://openalex.org/fields/25",
+                "display_name": "Materials Science"
+            },
+            "domain": {
+                "id": "https://openalex.org/domains/3",
+                "display_name": "Physical Sciences"
+            }
+        },
+        {
+            "id": "https://openalex.org/T10700",
+            "display_name": "Metal Forming Simulation Techniques",
+            "score": 0.0662,
+            "subfield": {
+                "id": "https://openalex.org/subfields/2210",
+                "display_name": "Mechanical Engineering"
+            },
+            "field": {
+                "id": "https://openalex.org/fields/22",
+                "display_name": "Engineering"
+            },
+            "domain": {
+                "id": "https://openalex.org/domains/3",
+                "display_name": "Physical Sciences"
+            }
+        },
+        {
+            "id": "https://openalex.org/T11201",
+            "display_name": "Metallurgy and Material Forming",
+            "score": 0.0637,
+            "subfield": {
+                "id": "https://openalex.org/subfields/2211",
+                "display_name": "Mechanics of Materials"
+            },
+            "field": {
+                "id": "https://openalex.org/fields/22",
+                "display_name": "Engineering"
+            },
+            "domain": {
+                "id": "https://openalex.org/domains/3",
+                "display_name": "Physical Sciences"
+            }
+        }
+    ],
+    "keywords": [],
+    "concepts": [
+        {
+            "id": "https://openalex.org/C57879066",
+            "wikidata": "https://www.wikidata.org/wiki/Q41217",
+            "display_name": "Mechanics",
+            "level": 1,
+            "score": 0.39098555
+        },
+        {
+            "id": "https://openalex.org/C192562407",
+            "wikidata": "https://www.wikidata.org/wiki/Q228736",
+            "display_name": "Materials science",
+            "level": 0,
+            "score": 0.38767177
+        },
+        {
+            "id": "https://openalex.org/C127413603",
+            "wikidata": "https://www.wikidata.org/wiki/Q11023",
+            "display_name": "Engineering",
+            "level": 0,
+            "score": 0.3558278
+        },
+        {
+            "id": "https://openalex.org/C78519656",
+            "wikidata": "https://www.wikidata.org/wiki/Q101333",
+            "display_name": "Mechanical engineering",
+            "level": 1,
+            "score": 0.345799
+        },
+        {
+            "id": "https://openalex.org/C121332964",
+            "wikidata": "https://www.wikidata.org/wiki/Q413",
+            "display_name": "Physics",
+            "level": 0,
+            "score": 0.28412676
+        }
+    ],
+    "mesh": [],
+    "locations_count": 1,
+    "locations": [
+        {
+            "is_oa": false,
+            "landing_page_url": "https://doi.org/10.4028/www.scientific.net/amm",
+            "pdf_url": null,
+            "source": {
+                "id": "https://openalex.org/S128754310",
+                "display_name": "Applied Mechanics and Materials",
+                "issn_l": "1660-9336",
+                "issn": [
+                    "1660-9336",
+                    "1662-7482",
+                    "2297-8941"
+                ],
+                "is_oa": false,
+                "is_in_doaj": false,
+                "is_indexed_in_scopus": false,
+                "is_core": true,
+                "host_organization": "https://openalex.org/P4310317839",
+                "host_organization_name": "Trans Tech Publications",
+                "host_organization_lineage": [
+                    "https://openalex.org/P4310317839"
+                ],
+                "host_organization_lineage_names": [
+                    "Trans Tech Publications"
+                ],
+                "type": "journal"
+            },
+            "license": null,
+            "license_id": null,
+            "version": null,
+            "is_accepted": false,
+            "is_published": false
+        }
+    ],
+    "best_oa_location": null,
+    "sustainable_development_goals": [],
+    "grants": [],
+    "datasets": [],
+    "versions": [],
+    "referenced_works_count": 0,
+    "referenced_works": [],
+    "related_works": [
+        "https://openalex.org/W4405893659",
+        "https://openalex.org/W4404995717",
+        "https://openalex.org/W4404784341",
+        "https://openalex.org/W4404725684",
+        "https://openalex.org/W4388998267",
+        "https://openalex.org/W4246450666",
+        "https://openalex.org/W2899084033",
+        "https://openalex.org/W2898370298",
+        "https://openalex.org/W2137437058",
+        "https://openalex.org/W2016187641"
+    ],
+    "abstract_inverted_index": null,
+    "abstract_inverted_index_v3": null,
+    "cited_by_api_url": "https://api.openalex.org/works?filter=cites:W4235929402",
+    "counts_by_year": [
+        {
+            "year": 2025,
+            "cited_by_count": 7
+        },
+        {
+            "year": 2024,
+            "cited_by_count": 194
+        },
+        {
+            "year": 2023,
+            "cited_by_count": 307
+        },
+        {
+            "year": 2022,
+            "cited_by_count": 320
+        },
+        {
+            "year": 2021,
+            "cited_by_count": 288
+        },
+        {
+            "year": 2020,
+            "cited_by_count": 222
+        },
+        {
+            "year": 2019,
+            "cited_by_count": 222
+        },
+        {
+            "year": 2018,
+            "cited_by_count": 245
+        },
+        {
+            "year": 2017,
+            "cited_by_count": 197
+        },
+        {
+            "year": 2016,
+            "cited_by_count": 160
+        },
+        {
+            "year": 2015,
+            "cited_by_count": 137
+        },
+        {
+            "year": 2014,
+            "cited_by_count": 83
+        },
+        {
+            "year": 2013,
+            "cited_by_count": 57
+        },
+        {
+            "year": 2012,
+            "cited_by_count": 16
+        }
+    ],
+    "updated_date": "2025-02-21T21:03:25.220493",
+    "created_date": "2022-05-12"
+}

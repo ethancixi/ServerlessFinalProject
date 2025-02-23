@@ -1,0 +1,1035 @@
+{
+    "meta": {
+        "count": 1093460,
+        "db_response_time_ms": 32,
+        "page": 1,
+        "per_page": 25,
+        "groups_count": null
+    },
+    "results": [
+        {
+            "id": "https://openalex.org/W4235929402",
+            "doi": "https://doi.org/10.4028/www.scientific.net/amm",
+            "title": "Applied Mechanics and Materials",
+            "display_name": "Applied Mechanics and Materials",
+            "publication_year": 2025,
+            "publication_date": "2025-02-10",
+            "ids": {
+                "openalex": "https://openalex.org/W4235929402",
+                "doi": "https://doi.org/10.4028/www.scientific.net/amm"
+            },
+            "language": "en",
+            "primary_location": {
+                "is_oa": false,
+                "landing_page_url": "https://doi.org/10.4028/www.scientific.net/amm",
+                "pdf_url": null,
+                "source": {
+                    "id": "https://openalex.org/S128754310",
+                    "display_name": "Applied Mechanics and Materials",
+                    "issn_l": "1660-9336",
+                    "issn": [
+                        "1660-9336",
+                        "1662-7482",
+                        "2297-8941"
+                    ],
+                    "is_oa": false,
+                    "is_in_doaj": false,
+                    "is_indexed_in_scopus": false,
+                    "is_core": true,
+                    "host_organization": "https://openalex.org/P4310317839",
+                    "host_organization_name": "Trans Tech Publications",
+                    "host_organization_lineage": [
+                        "https://openalex.org/P4310317839"
+                    ],
+                    "host_organization_lineage_names": [
+                        "Trans Tech Publications"
+                    ],
+                    "type": "journal"
+                },
+                "license": null,
+                "license_id": null,
+                "version": null,
+                "is_accepted": false,
+                "is_published": false
+            },
+            "type": "paratext",
+            "type_crossref": "journal",
+            "indexed_in": [
+                "crossref"
+            ],
+            "open_access": {
+                "is_oa": false,
+                "oa_status": "closed",
+                "oa_url": null,
+                "any_repository_has_fulltext": false
+            },
+            "authorships": [],
+            "institution_assertions": [],
+            "countries_distinct_count": 0,
+            "institutions_distinct_count": 0,
+            "corresponding_author_ids": [],
+            "corresponding_institution_ids": [],
+            "apc_list": null,
+            "apc_paid": null,
+            "fwci": null,
+            "has_fulltext": false,
+            "cited_by_count": 2466,
+            "citation_normalized_percentile": {
+                "value": 0.961538,
+                "is_in_top_1_percent": false,
+                "is_in_top_10_percent": true
+            },
+            "cited_by_percentile_year": {
+                "min": 99,
+                "max": 100
+            },
+            "biblio": {
+                "volume": null,
+                "issue": null,
+                "first_page": null,
+                "last_page": null
+            },
+            "is_retracted": false,
+            "is_paratext": true,
+            "primary_topic": {
+                "id": "https://openalex.org/T13129",
+                "display_name": "Material Properties and Applications",
+                "score": 0.0695,
+                "subfield": {
+                    "id": "https://openalex.org/subfields/2500",
+                    "display_name": "General Materials Science"
+                },
+                "field": {
+                    "id": "https://openalex.org/fields/25",
+                    "display_name": "Materials Science"
+                },
+                "domain": {
+                    "id": "https://openalex.org/domains/3",
+                    "display_name": "Physical Sciences"
+                }
+            },
+            "topics": [
+                {
+                    "id": "https://openalex.org/T13129",
+                    "display_name": "Material Properties and Applications",
+                    "score": 0.0695,
+                    "subfield": {
+                        "id": "https://openalex.org/subfields/2500",
+                        "display_name": "General Materials Science"
+                    },
+                    "field": {
+                        "id": "https://openalex.org/fields/25",
+                        "display_name": "Materials Science"
+                    },
+                    "domain": {
+                        "id": "https://openalex.org/domains/3",
+                        "display_name": "Physical Sciences"
+                    }
+                },
+                {
+                    "id": "https://openalex.org/T10700",
+                    "display_name": "Metal Forming Simulation Techniques",
+                    "score": 0.0662,
+                    "subfield": {
+                        "id": "https://openalex.org/subfields/2210",
+                        "display_name": "Mechanical Engineering"
+                    },
+                    "field": {
+                        "id": "https://openalex.org/fields/22",
+                        "display_name": "Engineering"
+                    },
+                    "domain": {
+                        "id": "https://openalex.org/domains/3",
+                        "display_name": "Physical Sciences"
+                    }
+                },
+                {
+                    "id": "https://openalex.org/T11201",
+                    "display_name": "Metallurgy and Material Forming",
+                    "score": 0.0637,
+                    "subfield": {
+                        "id": "https://openalex.org/subfields/2211",
+                        "display_name": "Mechanics of Materials"
+                    },
+                    "field": {
+                        "id": "https://openalex.org/fields/22",
+                        "display_name": "Engineering"
+                    },
+                    "domain": {
+                        "id": "https://openalex.org/domains/3",
+                        "display_name": "Physical Sciences"
+                    }
+                }
+            ],
+            "keywords": [],
+            "concepts": [
+                {
+                    "id": "https://openalex.org/C57879066",
+                    "wikidata": "https://www.wikidata.org/wiki/Q41217",
+                    "display_name": "Mechanics",
+                    "level": 1,
+                    "score": 0.39098555
+                },
+                {
+                    "id": "https://openalex.org/C192562407",
+                    "wikidata": "https://www.wikidata.org/wiki/Q228736",
+                    "display_name": "Materials science",
+                    "level": 0,
+                    "score": 0.38767177
+                },
+                {
+                    "id": "https://openalex.org/C127413603",
+                    "wikidata": "https://www.wikidata.org/wiki/Q11023",
+                    "display_name": "Engineering",
+                    "level": 0,
+                    "score": 0.3558278
+                },
+                {
+                    "id": "https://openalex.org/C78519656",
+                    "wikidata": "https://www.wikidata.org/wiki/Q101333",
+                    "display_name": "Mechanical engineering",
+                    "level": 1,
+                    "score": 0.345799
+                },
+                {
+                    "id": "https://openalex.org/C121332964",
+                    "wikidata": "https://www.wikidata.org/wiki/Q413",
+                    "display_name": "Physics",
+                    "level": 0,
+                    "score": 0.28412676
+                }
+            ],
+            "mesh": [],
+            "locations_count": 1,
+            "locations": [
+                {
+                    "is_oa": false,
+                    "landing_page_url": "https://doi.org/10.4028/www.scientific.net/amm",
+                    "pdf_url": null,
+                    "source": {
+                        "id": "https://openalex.org/S128754310",
+                        "display_name": "Applied Mechanics and Materials",
+                        "issn_l": "1660-9336",
+                        "issn": [
+                            "1660-9336",
+                            "1662-7482",
+                            "2297-8941"
+                        ],
+                        "is_oa": false,
+                        "is_in_doaj": false,
+                        "is_indexed_in_scopus": false,
+                        "is_core": true,
+                        "host_organization": "https://openalex.org/P4310317839",
+                        "host_organization_name": "Trans Tech Publications",
+                        "host_organization_lineage": [
+                            "https://openalex.org/P4310317839"
+                        ],
+                        "host_organization_lineage_names": [
+                            "Trans Tech Publications"
+                        ],
+                        "type": "journal"
+                    },
+                    "license": null,
+                    "license_id": null,
+                    "version": null,
+                    "is_accepted": false,
+                    "is_published": false
+                }
+            ],
+            "best_oa_location": null,
+            "sustainable_development_goals": [],
+            "grants": [],
+            "datasets": [],
+            "versions": [],
+            "referenced_works_count": 0,
+            "referenced_works": [],
+            "related_works": [
+                "https://openalex.org/W4405893659",
+                "https://openalex.org/W4404995717",
+                "https://openalex.org/W4404784341",
+                "https://openalex.org/W4404725684",
+                "https://openalex.org/W4388998267",
+                "https://openalex.org/W4246450666",
+                "https://openalex.org/W2899084033",
+                "https://openalex.org/W2898370298",
+                "https://openalex.org/W2137437058",
+                "https://openalex.org/W2016187641"
+            ],
+            "abstract_inverted_index": null,
+            "abstract_inverted_index_v3": null,
+            "cited_by_api_url": "https://api.openalex.org/works?filter=cites:W4235929402",
+            "counts_by_year": [
+                {
+                    "year": 2025,
+                    "cited_by_count": 7
+                },
+                {
+                    "year": 2024,
+                    "cited_by_count": 194
+                },
+                {
+                    "year": 2023,
+                    "cited_by_count": 307
+                },
+                {
+                    "year": 2022,
+                    "cited_by_count": 320
+                },
+                {
+                    "year": 2021,
+                    "cited_by_count": 288
+                },
+                {
+                    "year": 2020,
+                    "cited_by_count": 222
+                },
+                {
+                    "year": 2019,
+                    "cited_by_count": 222
+                },
+                {
+                    "year": 2018,
+                    "cited_by_count": 245
+                },
+                {
+                    "year": 2017,
+                    "cited_by_count": 197
+                },
+                {
+                    "year": 2016,
+                    "cited_by_count": 160
+                },
+                {
+                    "year": 2015,
+                    "cited_by_count": 137
+                },
+                {
+                    "year": 2014,
+                    "cited_by_count": 83
+                },
+                {
+                    "year": 2013,
+                    "cited_by_count": 57
+                },
+                {
+                    "year": 2012,
+                    "cited_by_count": 16
+                }
+            ],
+            "updated_date": "2025-02-21T21:03:25.220493",
+            "created_date": "2022-05-12"
+        },
+        {
+            "id": "https://openalex.org/W1604831933",
+            "doi": "https://doi.org/10.4324/9781003282969-47",
+            "title": "From The Emancipated Spectator",
+            "display_name": "From The Emancipated Spectator",
+            "publication_year": 2025,
+            "publication_date": "2025-01-21",
+            "ids": {
+                "openalex": "https://openalex.org/W1604831933",
+                "doi": "https://doi.org/10.4324/9781003282969-47",
+                "mag": "1604831933"
+            },
+            "language": "en",
+            "primary_location": {
+                "is_oa": false,
+                "landing_page_url": "https://doi.org/10.4324/9781003282969-47",
+                "pdf_url": null,
+                "source": {
+                    "id": "https://openalex.org/S4306463855",
+                    "display_name": "Routledge eBooks",
+                    "issn_l": null,
+                    "issn": null,
+                    "is_oa": false,
+                    "is_in_doaj": false,
+                    "is_indexed_in_scopus": false,
+                    "is_core": false,
+                    "host_organization": "https://openalex.org/P4310320449",
+                    "host_organization_name": "Informa",
+                    "host_organization_lineage": [
+                        "https://openalex.org/P4310320449"
+                    ],
+                    "host_organization_lineage_names": [
+                        "Informa"
+                    ],
+                    "type": "ebook platform"
+                },
+                "license": null,
+                "license_id": null,
+                "version": null,
+                "is_accepted": false,
+                "is_published": false
+            },
+            "type": "book-chapter",
+            "type_crossref": "book-chapter",
+            "indexed_in": [
+                "crossref"
+            ],
+            "open_access": {
+                "is_oa": false,
+                "oa_status": "closed",
+                "oa_url": null,
+                "any_repository_has_fulltext": false
+            },
+            "authorships": [
+                {
+                    "author_position": "first",
+                    "author": {
+                        "id": "https://openalex.org/A5108657500",
+                        "display_name": "Jacques Ranci\u00e8re",
+                        "orcid": null
+                    },
+                    "institutions": [],
+                    "countries": [],
+                    "is_corresponding": false,
+                    "raw_author_name": "Jacques Ranci\u00e8re",
+                    "raw_affiliation_strings": [],
+                    "affiliations": []
+                },
+                {
+                    "author_position": "last",
+                    "author": {
+                        "id": "https://openalex.org/A5115959291",
+                        "display_name": "Gregory Elliott",
+                        "orcid": null
+                    },
+                    "institutions": [],
+                    "countries": [],
+                    "is_corresponding": false,
+                    "raw_author_name": "Gregory Elliott",
+                    "raw_affiliation_strings": [],
+                    "affiliations": []
+                }
+            ],
+            "institution_assertions": [],
+            "countries_distinct_count": 0,
+            "institutions_distinct_count": 0,
+            "corresponding_author_ids": [],
+            "corresponding_institution_ids": [],
+            "apc_list": null,
+            "apc_paid": null,
+            "fwci": 86.022,
+            "has_fulltext": false,
+            "cited_by_count": 1634,
+            "citation_normalized_percentile": {
+                "value": 0.983457,
+                "is_in_top_1_percent": false,
+                "is_in_top_10_percent": true
+            },
+            "cited_by_percentile_year": {
+                "min": 99,
+                "max": 100
+            },
+            "biblio": {
+                "volume": null,
+                "issue": null,
+                "first_page": "318",
+                "last_page": "321"
+            },
+            "is_retracted": false,
+            "is_paratext": false,
+            "primary_topic": {
+                "id": "https://openalex.org/T10758",
+                "display_name": "Cinema and Media Studies",
+                "score": 0.2568,
+                "subfield": {
+                    "id": "https://openalex.org/subfields/2002",
+                    "display_name": "Economics and Econometrics"
+                },
+                "field": {
+                    "id": "https://openalex.org/fields/20",
+                    "display_name": "Economics, Econometrics and Finance"
+                },
+                "domain": {
+                    "id": "https://openalex.org/domains/2",
+                    "display_name": "Social Sciences"
+                }
+            },
+            "topics": [
+                {
+                    "id": "https://openalex.org/T10758",
+                    "display_name": "Cinema and Media Studies",
+                    "score": 0.2568,
+                    "subfield": {
+                        "id": "https://openalex.org/subfields/2002",
+                        "display_name": "Economics and Econometrics"
+                    },
+                    "field": {
+                        "id": "https://openalex.org/fields/20",
+                        "display_name": "Economics, Econometrics and Finance"
+                    },
+                    "domain": {
+                        "id": "https://openalex.org/domains/2",
+                        "display_name": "Social Sciences"
+                    }
+                }
+            ],
+            "keywords": [],
+            "concepts": [
+                {
+                    "id": "https://openalex.org/C142362112",
+                    "wikidata": "https://www.wikidata.org/wiki/Q735",
+                    "display_name": "Art",
+                    "level": 0,
+                    "score": 0.41791883
+                },
+                {
+                    "id": "https://openalex.org/C127313418",
+                    "wikidata": "https://www.wikidata.org/wiki/Q1069",
+                    "display_name": "Geology",
+                    "level": 0,
+                    "score": 0.36716193
+                }
+            ],
+            "mesh": [],
+            "locations_count": 1,
+            "locations": [
+                {
+                    "is_oa": false,
+                    "landing_page_url": "https://doi.org/10.4324/9781003282969-47",
+                    "pdf_url": null,
+                    "source": {
+                        "id": "https://openalex.org/S4306463855",
+                        "display_name": "Routledge eBooks",
+                        "issn_l": null,
+                        "issn": null,
+                        "is_oa": false,
+                        "is_in_doaj": false,
+                        "is_indexed_in_scopus": false,
+                        "is_core": false,
+                        "host_organization": "https://openalex.org/P4310320449",
+                        "host_organization_name": "Informa",
+                        "host_organization_lineage": [
+                            "https://openalex.org/P4310320449"
+                        ],
+                        "host_organization_lineage_names": [
+                            "Informa"
+                        ],
+                        "type": "ebook platform"
+                    },
+                    "license": null,
+                    "license_id": null,
+                    "version": null,
+                    "is_accepted": false,
+                    "is_published": false
+                }
+            ],
+            "best_oa_location": null,
+            "sustainable_development_goals": [],
+            "grants": [],
+            "datasets": [],
+            "versions": [],
+            "referenced_works_count": 0,
+            "referenced_works": [],
+            "related_works": [
+                "https://openalex.org/W4387497383",
+                "https://openalex.org/W3183948672",
+                "https://openalex.org/W2898370298",
+                "https://openalex.org/W2137437058",
+                "https://openalex.org/W2016187641"
+            ],
+            "abstract_inverted_index": {
+                "Among": [
+                    0
+                ],
+                "leftist": [
+                    1
+                ],
+                "cultural": [
+                    2
+                ],
+                "critics,": [
+                    3
+                ],
+                "it": [
+                    4
+                ],
+                "often": [
+                    5
+                ],
+                "believed": [
+                    6
+                ],
+                "that": [
+                    7,
+                    35,
+                    57,
+                    103,
+                    141,
+                    149,
+                    168
+                ],
+                "workers": [
+                    8
+                ],
+                "and": [
+                    9,
+                    64,
+                    81,
+                    127,
+                    136
+                ],
+                "intellectuals": [
+                    10
+                ],
+                "are": [
+                    11
+                ],
+                "natural": [
+                    12
+                ],
+                "allies": [
+                    13
+                ],
+                "in": [
+                    14,
+                    48
+                ],
+                "the": [
+                    15,
+                    27,
+                    36,
+                    44,
+                    58,
+                    71,
+                    95,
+                    104,
+                    112,
+                    170
+                ],
+                "fight": [
+                    16
+                ],
+                "for": [
+                    17,
+                    63,
+                    70,
+                    176
+                ],
+                "social": [
+                    18
+                ],
+                "change.": [
+                    19
+                ],
+                "Philosopher": [
+                    20,
+                    80
+                ],
+                "Jacques": [
+                    21
+                ],
+                "Ranci\u00e8re": [
+                    22,
+                    139
+                ],
+                "has": [
+                    23
+                ],
+                "been": [
+                    24
+                ],
+                "one": [
+                    25,
+                    167
+                ],
+                "of": [
+                    26,
+                    31,
+                    43,
+                    50,
+                    75
+                ],
+                "most": [
+                    28
+                ],
+                "outspoken": [
+                    29
+                ],
+                "critics": [
+                    30
+                ],
+                "this": [
+                    32,
+                    98
+                ],
+                "view,": [
+                    33
+                ],
+                "suggesting": [
+                    34
+                ],
+                "Marxist": [
+                    37
+                ],
+                "philosophers": [
+                    38
+                ],
+                "construct": [
+                    39
+                ],
+                "a": [
+                    40
+                ],
+                "romanticized": [
+                    41
+                ],
+                "notion": [
+                    42
+                ],
+                "working": [
+                    45
+                ],
+                "class": [
+                    46
+                ],
+                "as": [
+                    47
+                ],
+                "need": [
+                    49
+                ],
+                "emancipation": [
+                    51
+                ],
+                "by": [
+                    52
+                ],
+                "enlightened": [
+                    53
+                ],
+                "intellectuals.": [
+                    54
+                ],
+                "The": [
+                    55,
+                    79,
+                    86,
+                    91
+                ],
+                "counterargument\u2014": [
+                    56
+                ],
+                "intelligentsia": [
+                    59
+                ],
+                "should": [
+                    60,
+                    106,
+                    151
+                ],
+                "not": [
+                    61,
+                    107,
+                    145
+                ],
+                "speak": [
+                    62
+                ],
+                "presume": [
+                    65,
+                    108
+                ],
+                "to": [
+                    66,
+                    85,
+                    100,
+                    109,
+                    116,
+                    174
+                ],
+                "know": [
+                    67,
+                    110
+                ],
+                "what's": [
+                    68
+                ],
+                "best": [
+                    69
+                ],
+                "masses\u2014runs": [
+                    72
+                ],
+                "through": [
+                    73
+                ],
+                "much": [
+                    74
+                ],
+                "Ranci\u00e8re's": [
+                    76
+                ],
+                "work,": [
+                    77
+                ],
+                "from": [
+                    78
+                ],
+                "His": [
+                    82
+                ],
+                "Poor": [
+                    83
+                ],
+                "(1983)": [
+                    84
+                ],
+                "Ignorant": [
+                    87
+                ],
+                "Schoolmaster": [
+                    88
+                ],
+                "(1991).": [
+                    89
+                ],
+                "In": [
+                    90
+                ],
+                "Emancipated": [
+                    92
+                ],
+                "Spectator": [
+                    93
+                ],
+                "(2008),": [
+                    94
+                ],
+                "philosopher": [
+                    96
+                ],
+                "extends": [
+                    97
+                ],
+                "principle": [
+                    99
+                ],
+                "theatre,": [
+                    101,
+                    164
+                ],
+                "arguing": [
+                    102
+                ],
+                "artist": [
+                    105
+                ],
+                "what": [
+                    111
+                ],
+                "spectator": [
+                    113
+                ],
+                "needs.": [
+                    114
+                ],
+                "Contrary": [
+                    115
+                ],
+                "Bertolt": [
+                    117
+                ],
+                "Brecht": [
+                    118
+                ],
+                "(see": [
+                    119,
+                    124
+                ],
+                "chapter": [
+                    120,
+                    125
+                ],
+                "35),": [
+                    121
+                ],
+                "Augusto": [
+                    122
+                ],
+                "Boal": [
+                    123
+                ],
+                "39),": [
+                    126
+                ],
+                "others": [
+                    128
+                ],
+                "who": [
+                    129
+                ],
+                "draw": [
+                    130
+                ],
+                "an": [
+                    131
+                ],
+                "opposition": [
+                    132
+                ],
+                "between": [
+                    133
+                ],
+                "individual": [
+                    134,
+                    142,
+                    171
+                ],
+                "spectatorship": [
+                    135,
+                    143
+                ],
+                "communal": [
+                    137
+                ],
+                "participation,": [
+                    138
+                ],
+                "argues": [
+                    140
+                ],
+                "\"is": [
+                    144
+                ],
+                "some": [
+                    146
+                ],
+                "passive": [
+                    147
+                ],
+                "condition": [
+                    148
+                ],
+                "we": [
+                    150
+                ],
+                "transform": [
+                    152
+                ],
+                "into": [
+                    153
+                ],
+                "activity.": [
+                    154
+                ],
+                "It": [
+                    155
+                ],
+                "is": [
+                    156,
+                    166
+                ],
+                "our": [
+                    157
+                ],
+                "normal": [
+                    158
+                ],
+                "condition\"": [
+                    159
+                ],
+                "(321).": [
+                    160
+                ],
+                "A": [
+                    161
+                ],
+                "truly": [
+                    162
+                ],
+                "progressive": [
+                    163
+                ],
+                "then,": [
+                    165
+                ],
+                "respects": [
+                    169
+                ],
+                "spectator's": [
+                    172
+                ],
+                "ability": [
+                    173
+                ],
+                "think": [
+                    175
+                ],
+                "his": [
+                    177
+                ],
+                "or": [
+                    178
+                ],
+                "herself.": [
+                    179
+                ]
+            },
+            "abstract_inverted_index_v3": null,
+            "cited_by_api_url": "https://api.openalex.org/works?filter=cites:W1604831933",
+            "counts_by_year": [
+                {
+                    "year": 2025,
+                    "cited_by_count": 2
+                },
+                {
+                    "year": 2024,
+                    "cited_by_count": 74
+                },
+                {
+                    "year": 2023,
+                    "cited_by_count": 88
+                },
+                {
+                    "year": 2022,
+                    "cited_by_count": 79
+                },
+                {
+                    "year": 2021,
+                    "cited_by_count": 69
+                },
+                {
+                    "year": 2020,
+                    "cited_by_count": 161
+                },
+                {
+                    "year": 2019,
+                    "cited_by_count": 139
+                },
+                {
+                    "year": 2018,
+                    "cited_by_count": 145
+                },
+                {
+                    "year": 2017,
+                    "cited_by_count": 142
+                },
+                {
+                    "year": 2016,
+                    "cited_by_count": 116
+                },
+                {
+                    "year": 2015,
+                    "cited_by_count": 125
+                },
+                {
+                    "year": 2014,
+                    "cited_by_count": 182
+                },
+                {
+                    "year": 2013,
+                    "cited_by_count": 136
+                },
+                {
+                    "year": 2012,
+                    "cited_by_count": 83
+                }
+            ],
+            "updated_date": "2025-02-13T22:04:34.620158",
+            "created_date": "2016-06-24"
+        }
+    ],
+    "group_by": []
+}
