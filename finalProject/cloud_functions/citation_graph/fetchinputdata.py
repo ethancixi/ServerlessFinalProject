@@ -22,6 +22,8 @@ transformed_data = [
         "RelatedPapers": [],
         "DetailedTopics": [],
         "PublicationDate": item.get("publication_date", "0001-01-01"),
+        "Authorships": item.get("authorships", []),
+        "Authors": []
     }
     for item in results
 ]
@@ -48,6 +50,9 @@ def fetch_publication_details(pub_id):
 
 # Step 5: Fetch titles for all publications and update the transformed_data
 for paper in transformed_data:
+    for authorship in paper.get("Authorships"):
+        paper["Authors"].append(authorship["author"])
+
     for topic in paper.get("Topics", []):
         topic_info = {
             "id": topic["id"],
@@ -74,8 +79,12 @@ for paper in transformed_data:
         # Fetch publication details for each related work
         publication_details = fetch_publication_details(related_pub_id)
 
+        authors = []
+        for authorship in paper.get("Authorships"):
+            authors.append(authorship["author"])
+
         detailed_topics = []
-        for topic in publication_details.get("Topics", []):
+        for topic in publication_details.get("topics", []):
             topic_info = {
                 "id": topic["id"],
                 "display_name": topic["display_name"],
@@ -100,7 +109,8 @@ for paper in transformed_data:
                 "ID": publication_details["id"],
                 "Title": publication_details["title"],
                 "DetailedTopics": detailed_topics,
-                "PublicationDate": publication_details["publication_date"]
+                "PublicationDate": publication_details["publication_date"],
+                "Authors": authors
             }
             paper["RelatedPapers"].append(relatedPaper)
 
@@ -112,7 +122,7 @@ citation_graph = nx.DiGraph()
 
 # Add nodes and edges to the graph
 for paper in transformed_data:
-    citation_graph.add_node(paper["ID"], title=paper["Title"], topics=paper["DetailedTopics"], pubdate=paper["PublicationDate"])
+    citation_graph.add_node(paper["ID"], title=paper["Title"], topics=paper.get("DetailedTopics", []), pubdate=paper["PublicationDate"], authors=paper["Authors"])
 
     # Add edges (citing relationships) and ensure unique entries in the related papers
     unique_related_papers = {related_paper["ID"]: related_paper for related_paper in paper["RelatedPapers"]}.values()
@@ -122,7 +132,7 @@ for paper in transformed_data:
         cited_paper_id = related_paper["ID"].split('/')[-1]  # Extract just the ID part
 
         if cited_paper_id not in citation_graph:
-            citation_graph.add_node(cited_paper_id, title=related_paper["Title"], topics=related_paper["DetailedTopics"], pubdate=related_paper["PublicationDate"])
+            citation_graph.add_node(cited_paper_id, title=related_paper["Title"], topics=related_paper.get("DetailedTopics", []), pubdate=related_paper["PublicationDate"], authors=related_paper["Authors"])
 
         citation_graph.add_edge(paper["ID"], cited_paper_id)
 
@@ -141,6 +151,21 @@ nx.draw_networkx_edges(citation_graph, pos, arrowstyle="->", arrowsize=10, edge_
 
 # Draw labels with a fallback for missing titles
 nx.draw_networkx_labels(citation_graph, pos, labels, font_size=8, font_weight="bold")
+
+# Function to clean node attributes before writing to GML
+def clean_attributes(graph):
+    for node, data in graph.nodes(data=True):
+        # Convert None values to empty strings
+        for key, value in data.items():
+            if value is None:
+                data[key] = ""
+
+            # Convert lists or dictionaries to JSON strings
+            elif isinstance(value, (list, dict)):
+                data[key] = json.dumps(value)  # Serialize to a JSON string
+
+# Apply cleaning before writing the GML file
+clean_attributes(citation_graph)
 
 # Save graph to GML file
 nx.write_gml(citation_graph, "citation_graph.gml")
