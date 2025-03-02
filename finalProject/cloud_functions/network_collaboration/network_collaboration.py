@@ -9,6 +9,10 @@ from datetime import datetime
 import matplotlib.pyplot as plt
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
+import functions_framework
+from google.cloud import storage
+import tempfile
+
 
 class CollaborationAnalyzer:
     def __init__(self, graph_path: str):
@@ -162,8 +166,14 @@ class CollaborationAnalyzer:
                     combined_score = 0.7 * similarity + 0.3 * network_score
                     
                     pair_info = {
-                        "author_1": node1,
-                        "author_2": node2,
+                        "author_1": {
+                            "id": node1,
+                            "name": self.G.nodes[node1].get("label", "Unknown")
+                        },
+                        "author_2": {
+                            "id": node2,
+                            "name": self.G.nodes[node2].get("label", "Unknown")
+                        },
                         "topic_similarity_score": round(similarity, 3),
                         "network_score": round(network_score, 3),
                         "combined_score": round(combined_score, 3),
@@ -175,33 +185,142 @@ class CollaborationAnalyzer:
         potential_pairs.sort(key=lambda x: x["combined_score"], reverse=True)
         return potential_pairs
 
-def main():
-    # Initialize analyzer
-    analyzer = CollaborationAnalyzer("co_authorship_graph.gml")
-    
-    # Find potential collaborators
-    recommendations = analyzer.find_potential_collaborators(min_similarity=0.3)
 
-    # Create output directory if it doesn't exist
-    output_dir = "collaboration_analysis"
-    os.makedirs(output_dir, exist_ok=True)
+class CloudCollaborationAnalyzer:
+    def __init__(self, input_file_path: str, source_bucket: str, output_bucket: str = "collaborationanalysis"):
+        """
+        Initialize the collaboration analyzer for cloud function.
+        
+        Args:
+            input_file_path: Path to the GML file in the source bucket
+            source_bucket: Name of the bucket containing the input file
+            output_bucket: Name of the bucket to store results
+        """
+        self.input_file_path = input_file_path
+        self.source_bucket = source_bucket
+        self.output_bucket = output_bucket
+        self.temp_input_file = None
+        
+    def download_input_file(self):
+        """Download the input GML file from Google Cloud Storage to a temp file."""
+        storage_client = storage.Client()
+        bucket = storage_client.bucket(self.source_bucket)
+        blob = bucket.blob(self.input_file_path)
+        
+        # Create a temporary file
+        temp_file = tempfile.NamedTemporaryFile(delete=False, suffix=".gml")
+        self.temp_input_file = temp_file.name
+        temp_file.close()
+        
+        # Download the file
+        blob.download_to_filename(self.temp_input_file)
+        print(f"Downloaded gs://{self.source_bucket}/{self.input_file_path} to {self.temp_input_file}")
+        
+        return self.temp_input_file
 
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    json_path = f"{output_dir}/recommendations_{timestamp}.json"
-    with open(json_path, 'w') as f:
-        json.dump({
+    def analyze_collaborations(self, min_similarity: float = 0.3):
+        """Run the collaboration analysis and save results to GCS."""
+        print("Analyzing potential collaborations...")
+        
+        # Initialize the analyzer with the downloaded graph
+        analyzer = CollaborationAnalyzer(self.temp_input_file)
+        
+        # Find potential collaborators
+        recommendations = analyzer.find_potential_collaborators(min_similarity=min_similarity)
+        
+        # Create timestamp for file naming
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        
+        # Save results to JSON in a temporary file
+        json_data = {
             "generated_at": datetime.now().isoformat(),
             "number_of_recommendations": len(recommendations),
             "recommendations": recommendations
-        }, f, indent=2)
-    
-    # Create and save visualization
-    viz_path = f"{output_dir}/collaboration_visualization_{timestamp}.png"
-    analyzer.create_visualization(recommendations, viz_path)
-    
-    print(f"Analysis complete. Results saved to {json_path}")
-    print(f"Visualization saved to {viz_path}")
+        }
+        
+        # Create temp file for JSON results
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".json") as temp_json:
+            temp_json_path = temp_json.name
+            json.dump(json_data, temp_json, indent=2)
+        
+        # Create temp file for visualization
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".png") as temp_viz:
+            temp_viz_path = temp_viz.name
+        
+        # Create visualization
+        analyzer.create_visualization(recommendations, temp_viz_path)
+        
+        # Upload results to GCS
+        storage_client = storage.Client()
+        bucket = storage_client.bucket(self.output_bucket)
+        
+        # Determine output folder name from input file
+        output_folder = os.path.basename(self.input_file_path).replace(".gml", "")
+        
+        # Upload JSON results
+        json_blob = bucket.blob(f"{output_folder}/recommendations_{timestamp}.json")
+        json_blob.upload_from_filename(temp_json_path)
+        print(f"Results saved to gs://{self.output_bucket}/{output_folder}/recommendations_{timestamp}.json")
+        
+        # Upload visualization
+        viz_blob = bucket.blob(f"{output_folder}/collaboration_visualization_{timestamp}.png")
+        viz_blob.upload_from_filename(temp_viz_path)
+        print(f"Visualization saved to gs://{self.output_bucket}/{output_folder}/collaboration_visualization_{timestamp}.png")
+        
+        # Clean up temporary files
+        os.remove(temp_json_path)
+        os.remove(temp_viz_path)
+        
+        return len(recommendations)
+        
+    def cleanup(self):
+        """Clean up temporary files."""
+        if self.temp_input_file and os.path.exists(self.temp_input_file):
+            os.remove(self.temp_input_file)
+            print(f"Deleted temporary input file {self.temp_input_file}")
 
 
-if __name__ == "__main__":
-    main()
+@functions_framework.cloud_event
+def analyze_collaboration_network(cloud_event):
+    """
+    Cloud Function triggered when a co-authorship GML file is uploaded to GCS.
+    Analyzes potential collaborations and saves results to the output bucket.
+    
+    Args:
+        cloud_event: The Cloud Event that triggered this function
+    """
+    data = cloud_event.data
+    bucket_name = data["bucket"]
+    file_path = data["name"]
+    
+    # Only process GML files with "co_authorship" in the name
+    if not file_path.endswith(".gml") or "co_authorship" not in file_path:
+        print(f"Skipping non-target file: gs://{bucket_name}/{file_path}")
+        return
+    
+    print(f"Processing collaboration analysis for: gs://{bucket_name}/{file_path}")
+    
+    try:
+        # Initialize the cloud analyzer
+        analyzer = CloudCollaborationAnalyzer(
+            input_file_path=file_path,
+            source_bucket=bucket_name,
+            output_bucket="collaborationanalysis"
+        )
+        
+        # Download the input file
+        analyzer.download_input_file()
+        
+        # Run the analysis
+        num_recommendations = analyzer.analyze_collaborations(min_similarity=0.3)
+        
+        print(f"Analysis complete. Found {num_recommendations} potential collaborations.")
+        
+    except Exception as e:
+        print(f"Error processing file: {e}")
+        raise
+        
+    finally:
+        # Clean up temporary files
+        if 'analyzer' in locals():
+            analyzer.cleanup()

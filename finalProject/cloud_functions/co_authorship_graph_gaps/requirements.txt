@@ -1,0 +1,6 @@
+matplotlib
+networkx
+python-louvain
+jsonschema
+functions-framework
+google-cloud-storage

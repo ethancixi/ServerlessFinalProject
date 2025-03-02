@@ -1,0 +1,7 @@
+networkx
+numpy
+requests
+matplotlib
+scikit-learn
+functions-framework
+google-cloud-storage
